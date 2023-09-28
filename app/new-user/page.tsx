@@ -19,7 +19,7 @@ const createNewUser = async () => {
             },
         })
     }
-    redirect("/jurnal")
+    redirect("/journal")
 }
 
 const NewUser = async () => {
