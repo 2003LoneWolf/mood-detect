@@ -1,5 +1,6 @@
 import EntryCard from "@/components/EntryCard";
 import NewEntryCard from "@/components/NewEntryCard";
+import { analyze } from "@/utils/ai";
 import { getUserByClerkID } from "@/utils/auth";
 import { prisma } from "@/utils/db";
 import Link from "next/link";
@@ -14,7 +15,10 @@ const getEntries = async () => {
     orderBy: {
       createdAt: "desc",
     },
-  });
+  })
+
+  await analyze('crack some jokes');
+
   return entries;
 };
 
